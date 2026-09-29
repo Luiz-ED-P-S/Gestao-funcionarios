@@ -26,10 +26,14 @@ public abstract class Funcionario {
         return salarioBase;
     }
 
-    public void setSalarioBase(double salarioBase) {
-        this.salarioBase = salarioBase;
+   public void setSalarioBase(double salarioBase) {
+        if (salarioBase > 0) {
+            this.salarioBase = salarioBase;
+        } else {
+        
+            throw new IllegalArgumentException("Erro: O salário base deve ser maior que zero.");
+        }
     }
-
 
     public abstract double calcularSalario();
 
